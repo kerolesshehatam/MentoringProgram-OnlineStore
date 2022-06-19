@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NOZ8rH2UM+m/Bm3BZWjFQ0O3dRUXOlFfQU9KX0IAjHM=",
+  "Source": "OnlineStore.Catalog.API",
+  "BasePath": "_content/OnlineStore.Catalog.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

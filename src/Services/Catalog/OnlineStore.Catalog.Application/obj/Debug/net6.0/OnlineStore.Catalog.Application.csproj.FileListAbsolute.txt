@@ -1,0 +1,15 @@
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\bin\Debug\net6.0\OnlineStore.Catalog.Application.deps.json
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\bin\Debug\net6.0\OnlineStore.Catalog.Application.dll
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\bin\Debug\net6.0\OnlineStore.Catalog.Application.pdb
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.csproj.AssemblyReference.cache
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.AssemblyInfoInputs.cache
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.AssemblyInfo.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.csproj.CoreCompileInputs.cache
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.dll
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\refint\OnlineStore.Catalog.Application.dll
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.pdb
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\ref\OnlineStore.Catalog.Application.dll
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\bin\Debug\net6.0\OnlineStore.Catalog.Domain.dll
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\bin\Debug\net6.0\OnlineStore.Catalog.Domain.pdb
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram\OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\obj\Debug\net6.0\OnlineStore.Catalog.Application.csproj.CopyComplete
