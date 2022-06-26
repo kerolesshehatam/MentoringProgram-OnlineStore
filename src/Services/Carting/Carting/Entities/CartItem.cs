@@ -1,4 +1,4 @@
-﻿namespace Carting.Entities
+﻿namespace OnlineStore.CartingService.Entities
 {
     public class CartItem
     {

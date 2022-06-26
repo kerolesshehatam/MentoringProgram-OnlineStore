@@ -1,20 +1,23 @@
 ﻿using AutoMapper;
-using Carting.Entities;
-using OlineStore.CartingService.Models.Requests;
-using OlineStore.CartingService.Models.Responses;
+using OnlineStore.CartingService.Entities;
+using OnlineStore.CartingService.Models.Requests;
+using OnlineStore.CartingService.Models.Responses;
 
-namespace OlineStore.CartingService.Models
+namespace OnlineStore.CartingService.Models
 {
     public class CartProfile : Profile
     {
         public CartProfile()
         {
+            CreateMap<Cart, CartResponse>()
+                .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items))
+                .ReverseMap();
+
+            CreateMap<CartItem, CartItemResponse>().ReverseMap();
             CreateMap<CartItemRequest, CartItem>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemId)
-                ).ReverseMap();
-            CreateMap<CartItem, CartItemResponse>()
-                .ForMember(dest => dest.ItemId, opt => opt.MapFrom(src => src.Id)
-                ).ReverseMap();
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ItemId))
+                .ReverseMap();
+
         }
     }
 }

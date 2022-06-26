@@ -15,6 +15,7 @@ builder.Services.AddCatalogDbContext(builder.Configuration);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services
+    .AddScoped<ICategoryRepository, CategoryRepository>()
     .AddScoped<ICategoryItemRepository, CategoryItemRepository>()
     .AddScoped<ICatalogService, CatalogService>();
 

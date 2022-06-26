@@ -1,7 +1,7 @@
-using Carting.Infrastructure.Redis;
-using Carting.Infrastructure.Repositories;
 using Microsoft.Extensions.Options;
-using OlineStore.CartingService.Services;
+using OnlineStore.CartingService.Infrastructure.Redis;
+using OnlineStore.CartingService.Infrastructure.Repositories;
+using OnlineStore.CartingService.Services;
 using StackExchange.Redis;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);

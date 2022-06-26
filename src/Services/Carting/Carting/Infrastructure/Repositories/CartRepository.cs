@@ -1,8 +1,8 @@
-﻿using Carting.Entities;
+﻿using OnlineStore.CartingService.Entities;
 using StackExchange.Redis;
 using System.Text.Json;
 
-namespace Carting.Infrastructure.Repositories
+namespace OnlineStore.CartingService.Infrastructure.Repositories
 {
     public class CartRepository : ICartRepository
     {
@@ -13,7 +13,7 @@ namespace Carting.Infrastructure.Repositories
             _database = redis.GetDatabase();
         }
 
-        public async Task<CartItem?> AddCartItemAsync(int cartId, CartItem item)
+        public async Task<CartItem?> AddCartItemAsync(string cartId, CartItem item)
         {
             var cart = await GetCartAsync(cartId);
 
@@ -25,23 +25,23 @@ namespace Carting.Infrastructure.Repositories
             return added ? item : null;
         }
 
-        public async Task<bool> RemoveCartItemAsync(int cartId, CartItem item)
+        public async Task<bool> RemoveCartItemAsync(string cartId, int itemId)
         {
             var cart = await GetCartAsync(cartId);
 
             if (cart == null || !cart.Items.Any())
                 return false;
 
-            cart.Items = cart.Items.Where(t => t.Id != item.Id).ToList();
+            cart.Items = cart.Items.Where(t => t.Id != itemId).ToList();
             return await UpdateBasketAsync(cart);
         }
 
-        public async Task<IEnumerable<CartItem>?> GetCartItemsAsync(int cartId)
+        public async Task<IEnumerable<CartItem>?> GetCartItemsAsync(string cartId)
         {
             var cart = await GetCartAsync(cartId);
             return cart?.Items;
         }
-        public async Task<Cart?> GetCartAsync(int cartId)
+        public async Task<Cart?> GetCartAsync(string cartId)
         {
             var cart = await _database.StringGetAsync(cartId.ToString());
 

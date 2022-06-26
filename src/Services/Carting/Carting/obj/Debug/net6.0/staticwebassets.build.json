@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "BlgOeJLqDO4WIObVYWtJupjfG+E7AL/6PQEkrojZGDc=",
-  "Source": "OlineStore.CartingService",
-  "BasePath": "_content/OlineStore.CartingService",
+  "Hash": "sVp8RaYnKrlLauJPAOT1fc613GvsWyd9eT0h+NYKmz8=",
+  "Source": "OnlineStore.CartingService",
+  "BasePath": "_content/OnlineStore.CartingService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

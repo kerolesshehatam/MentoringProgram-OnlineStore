@@ -1219,9 +1219,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OlineStore.CartingService.csproj",
-      "projectName": "OlineStore.CartingService",
-      "projectPath": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OlineStore.CartingService.csproj",
+      "projectUniqueName": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OnlineStore.CartingService.csproj",
+      "projectName": "OnlineStore.CartingService",
+      "projectPath": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OnlineStore.CartingService.csproj",
       "packagesPath": "C:\\Users\\Keroles_Shehata\\.nuget\\packages\\",
       "outputPath": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\obj\\",
       "projectStyle": "PackageReference",
@@ -1291,7 +1291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

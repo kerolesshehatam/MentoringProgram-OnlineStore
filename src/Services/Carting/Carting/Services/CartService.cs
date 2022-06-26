@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Carting.Entities;
-using Carting.Infrastructure.Repositories;
-using OlineStore.CartingService.Models.Requests;
-using OlineStore.CartingService.Models.Responses;
+using OnlineStore.CartingService.Entities;
+using OnlineStore.CartingService.Infrastructure.Repositories;
+using OnlineStore.CartingService.Models.Requests;
+using OnlineStore.CartingService.Models.Responses;
 
-namespace OlineStore.CartingService.Services
+namespace OnlineStore.CartingService.Services
 {
     public class CartService : ICartService
     {
@@ -16,26 +16,32 @@ namespace OlineStore.CartingService.Services
             _mapper = mapper;
         }
 
-        public async Task<CartItemResponse?> AddCartItemAsync(CartItemRequest request)
+        public async Task<CartResponse> GetCartAsync(string cartId)
+        {
+            var result = await _cartRepository.GetCartAsync(cartId);
+
+            return _mapper.Map<CartResponse>(result);
+        }
+
+        public async Task<IEnumerable<CartItemResponse>> GetCartItemsAsync(string cartId)
+        {
+            var result = await _cartRepository.GetCartItemsAsync(cartId);
+
+            return _mapper.Map<IEnumerable<CartItemResponse>>(result);
+        }
+        public async Task<CartItemResponse> AddCartItemAsync(CartItemRequest request)
         {
             var item = _mapper.Map<CartItem>(request);
 
             var result = await _cartRepository.AddCartItemAsync(request.CartId, item);
 
-            return result != null ? _mapper.Map<CartItemResponse>(result) : null;
+            return _mapper.Map<CartItemResponse>(result);
         }
 
-        public async Task<IEnumerable<CartItemResponse>?> GetCartItemsAsync(int cartId)
-        {
-            var result = await _cartRepository.GetCartItemsAsync(cartId);
 
-            return result != null ? _mapper.Map<IEnumerable<CartItemResponse>>(result) : null;
-        }
-
-        public async Task<bool> RemoveCartItemAsync(CartItemRequest request)
+        public async Task<bool> RemoveCartItemAsync(string cartId, int itemId)
         {
-            var item = _mapper.Map<CartItem>(request);
-            return await _cartRepository.RemoveCartItemAsync(request.CartId, item);
+            return await _cartRepository.RemoveCartItemAsync(cartId, itemId);
         }
     }
 }

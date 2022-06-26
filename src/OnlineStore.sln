@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Carting", "Carting", "{3F62
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{11F878AE-ACC2-4CC9-9373-0368F0772A26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlineStore.CartingService", "Services\Carting\Carting\OlineStore.CartingService.csproj", "{D9F162CC-9D69-4F1B-8CC3-82D2D8A3549C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.CartingService", "Services\Carting\Carting\OnlineStore.CartingService.csproj", "{D9F162CC-9D69-4F1B-8CC3-82D2D8A3549C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Catalog.API", "Services\Catalog\OnlineStore.Catalog.API\OnlineStore.Catalog.API.csproj", "{C826CFD2-BD01-47A3-8148-6D1F001CDE86}"
 EndProject
@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Catalog.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Catalog.Persistence", "Services\Catalog\OnlineStore.Catalog.Persistence\OnlineStore.Catalog.Persistence.csproj", "{D87717EE-676C-4661-B7E1-1033364A2EA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Catalog.Application", "Services\Catalog\OnlineStore.Catalog.Application\OnlineStore.Catalog.Application.csproj", "{7535D237-E3C1-415D-846B-59FDF15639BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Catalog.Application", "Services\Catalog\OnlineStore.Catalog.Application\OnlineStore.Catalog.Application.csproj", "{7535D237-E3C1-415D-846B-59FDF15639BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

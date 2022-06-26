@@ -1,4 +1,4 @@
-﻿namespace Carting.Infrastructure.Redis
+﻿namespace OnlineStore.CartingService.Infrastructure.Redis
 {
     public class CartSettings
     {

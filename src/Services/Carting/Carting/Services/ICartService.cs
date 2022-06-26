@@ -1,12 +1,13 @@
-﻿using OlineStore.CartingService.Models.Requests;
-using OlineStore.CartingService.Models.Responses;
+﻿using OnlineStore.CartingService.Models.Requests;
+using OnlineStore.CartingService.Models.Responses;
 
-namespace OlineStore.CartingService.Services
+namespace OnlineStore.CartingService.Services
 {
     public interface ICartService
     {
-        Task<IEnumerable<CartItemResponse>?> GetCartItemsAsync(int cartId);
-        Task<CartItemResponse?> AddCartItemAsync(CartItemRequest request);
-        Task<bool> RemoveCartItemAsync(CartItemRequest request);
+        Task<CartResponse> GetCartAsync(string cartId);
+        Task<IEnumerable<CartItemResponse>> GetCartItemsAsync(string cartId);
+        Task<CartItemResponse> AddCartItemAsync(CartItemRequest request);
+        Task<bool> RemoveCartItemAsync(string cartId, int itemId);
     }
 }

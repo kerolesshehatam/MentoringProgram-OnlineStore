@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "903JQ7yGQcRcMKD6+LBrPec5ZBRmj60XSpsNpSwwKlqYGQCLeTi+ft8UN41/ZTHMzrfOxvpG2aPvBppbpx4QDQ==",
+  "dgSpecHash": "fwTLafa0YLsir/74KN7CQ4jzSwC/fMjPYNhQ9KYZq1ZRuj3E5zbxX1mZrjV0gV62WtdUjzmuK5XcmQqXs9VEXA==",
   "success": true,
-  "projectFilePath": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OlineStore.CartingService.csproj",
+  "projectFilePath": "C:\\Keroles Shehata\\EPAM\\Projects\\MentoringProgram\\OnlineStore\\src\\Services\\Carting\\Carting\\OnlineStore.CartingService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Keroles_Shehata\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Keroles_Shehata\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

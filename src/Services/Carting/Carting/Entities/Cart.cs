@@ -1,8 +1,8 @@
-﻿namespace Carting.Entities
+﻿namespace OnlineStore.CartingService.Entities
 {
     public class Cart
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public List<CartItem> Items { get; set; }
 
         protected Cart()
@@ -10,7 +10,7 @@
 
         }
 
-        public Cart(int id)
+        public Cart(string id)
         {
             Id = id;
             Items = new List<CartItem>();

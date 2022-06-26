@@ -16,9 +16,10 @@ namespace OnlineStore.Catalog.Application.Models
             CreateMap<CategoryItem, CategoryItemResponse>()
                 .ForMember(dest => dest.CategoryDetails, opt => opt.MapFrom(src => src.Category))
                 .ReverseMap();
+
+            CreateMap<CategoryRequest, Category>().ReverseMap();
+
             CreateMap<Category, CategoryResponse>().ReverseMap();
-
-
         }
     }
 }

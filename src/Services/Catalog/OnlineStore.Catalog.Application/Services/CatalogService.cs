@@ -8,51 +8,94 @@ namespace OnlineStore.Catalog.Application.Services
 {
     public class CatalogService : ICatalogService
     {
-        public readonly IMapper _mapper;
+        private readonly IMapper _mapper;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly ICategoryItemRepository _categoryItemRepository;
 
-        public CatalogService(IMapper mapper, ICategoryItemRepository categoryItemRepository)
+        public CatalogService(IMapper mapper, ICategoryItemRepository categoryItemRepository, ICategoryRepository categoryRepository)
         {
             _mapper = mapper;
             _categoryItemRepository = categoryItemRepository;
+            _categoryRepository = categoryRepository;
         }
 
-        public async Task<CategoryItemResponse?> AddCatalogItemAsync(CategoryItemRequest request)
+        public async Task<CategoryResponse> GetCategoryAsync(int id)
         {
-            var item = _mapper.Map<CategoryItem>(request);
 
-            var result = await _categoryItemRepository.AddCatalogItemAsync(item);
+            var result = await _categoryRepository.GetCategoryAsync(id);
 
-            return result != null ? _mapper.Map<CategoryItemResponse>(result) : null;
+            return _mapper.Map<CategoryResponse>(result);
         }
 
-        public async Task<bool> DeleteCategoryItemAsync(int id)
+        public async Task<IEnumerable<CategoryResponse>> GetCategoriesAsync()
         {
-            return await _categoryItemRepository.DeleteCategoryItemAsync(id);
+
+            var result = await _categoryRepository.GetCategoriesAsync();
+
+            return _mapper.Map<IEnumerable<CategoryResponse>>(result);
         }
 
-        public async Task<CategoryItemResponse?> GetCategoryItemAsync(int id)
+        public async Task<CategoryResponse> AddCategoryAsync(CategoryRequest request)
+        {
+            var category = _mapper.Map<Category>(request);
+
+            var result = await _categoryRepository.AddCategoryAsync(category);
+
+            return _mapper.Map<CategoryResponse>(result);
+        }
+
+        public async Task<CategoryResponse> UpdateCategoryAsync(CategoryRequest request)
+        {
+            var category = _mapper.Map<Category>(request);
+
+            var result = await _categoryRepository.UpdateCategoryAsync(category);
+
+            return _mapper.Map<CategoryResponse>(result);
+        }
+
+        public async Task<bool> DeleteCategoryAsync(int id)
+        {
+            return await _categoryRepository.DeleteCategoryAsync(id);
+        }
+
+
+        public async Task<CategoryItemResponse> GetCategoryItemAsync(int id)
         {
 
             var result = await _categoryItemRepository.GetCategoryItemAsync(id);
 
-            return result != null ? _mapper.Map<CategoryItemResponse>(result) : null;
+            return _mapper.Map<CategoryItemResponse>(result);
         }
 
-        public async Task<IEnumerable<CategoryItemResponse>?> GetCategoryItemsAsync(int categoryId)
+        public async Task<IEnumerable<CategoryItemResponse>> GetCategoryItemsAsync(int categoryId, int pageIndex = 1, int pageSize = 10)
         {
-            var result = await _categoryItemRepository.GetCategoryItemsAsync(categoryId);
+            var result = await _categoryItemRepository.GetCategoryItemsAsync(categoryId, pageIndex, pageSize);
 
-            return result != null ? _mapper.Map<IEnumerable<CategoryItemResponse>>(result) : null;
+            return _mapper.Map<IEnumerable<CategoryItemResponse>>(result);
         }
 
-        public async Task<CategoryItemResponse?> UpdateCatalogItemAsync(CategoryItemRequest request)
+        public async Task<CategoryItemResponse> AddCategoryItemAsync(CategoryItemRequest request)
         {
             var item = _mapper.Map<CategoryItem>(request);
 
-            var result = await _categoryItemRepository.UpdateCatalogItemAsync(item);
+            var result = await _categoryItemRepository.AddCategoryItemAsync(item);
 
-            return result != null ? _mapper.Map<CategoryItemResponse>(result) : null;
+            return _mapper.Map<CategoryItemResponse>(result);
+        }
+
+        public async Task<CategoryItemResponse> UpdateCategoryItemAsync(CategoryItemRequest request)
+        {
+            var item = _mapper.Map<CategoryItem>(request);
+
+            var result = await _categoryItemRepository.UpdateCategoryItemAsync(item);
+
+            return _mapper.Map<CategoryItemResponse>(result);
+        }
+
+
+        public async Task<bool> DeleteCategoryItemAsync(int id)
+        {
+            return await _categoryItemRepository.DeleteCategoryItemAsync(id);
         }
     }
 }

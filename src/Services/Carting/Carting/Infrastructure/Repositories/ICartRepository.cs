@@ -1,12 +1,12 @@
-﻿using Carting.Entities;
+﻿using OnlineStore.CartingService.Entities;
 
-namespace Carting.Infrastructure.Repositories
+namespace OnlineStore.CartingService.Infrastructure.Repositories
 {
     public interface ICartRepository
     {
-        Task<CartItem?> AddCartItemAsync(int cartId, CartItem item);
-        Task<Cart?> GetCartAsync(int cartId);
-        Task<IEnumerable<CartItem>?> GetCartItemsAsync(int cartId);
-        Task<bool> RemoveCartItemAsync(int cartId, CartItem item);
+        Task<CartItem?> AddCartItemAsync(string cartId, CartItem item);
+        Task<Cart?> GetCartAsync(string cartId);
+        Task<IEnumerable<CartItem>?> GetCartItemsAsync(string cartId);
+        Task<bool> RemoveCartItemAsync(string cartId, int itemId);
     }
 }
