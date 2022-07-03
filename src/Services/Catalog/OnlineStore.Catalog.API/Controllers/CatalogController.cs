@@ -7,7 +7,7 @@ using System.Net;
 namespace OnlineStore.Catalog.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("catalog")]
     public class CatalogController : ControllerBase
     {
 
@@ -31,7 +31,7 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("category/{id}")]
+        [Route("category")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(CategoryResponse), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<CategoryResponse>> GetCategoryById(int id)
@@ -46,10 +46,10 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("category/{categoryId}/items")]
+        [Route("category/items")]
         [ProducesResponseType(typeof(IEnumerable<CategoryResponse>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<IEnumerable<CategoryItemResponse>>> GetItems(int categoryId, [FromQuery] int pageIndex = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<CategoryItemResponse>>> GetItems([FromQuery] int categoryId, [FromQuery] int pageIndex = 1, [FromQuery] int pageSize = 10)
         {
             if (categoryId == 0 || pageSize == 0)
             {
@@ -77,15 +77,13 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
         [HttpPost]
-        [Route("category/{categoryId}/items")]
+        [Route("category/items")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> AddCategoryItemAsync(int categoryId, [FromBody] CategoryItemRequest request)
+        public async Task<ActionResult> AddCategoryItemAsync([FromBody] CategoryItemRequest request)
         {
-            if (!ModelState.IsValid || categoryId == 0 || categoryId != request.CategoryId)
-            {
+            if (!ModelState.IsValid)
                 return BadRequest("Invalid request");
-            }
 
             var result = await _catalogService.AddCategoryItemAsync(request);
 
@@ -93,15 +91,13 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
         [HttpPut]
-        [Route("category/{id}")]
+        [Route("category")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> UpdateCategoryAsync(int id, [FromBody] CategoryRequest request)
+        public async Task<ActionResult> UpdateCategoryAsync([FromBody] CategoryRequest request)
         {
-            if (!ModelState.IsValid || id == 0 || id != request.Id)
-            {
+            if (!ModelState.IsValid)
                 return BadRequest("Invalid request");
-            }
 
             var result = await _catalogService.UpdateCategoryAsync(request);
 
@@ -109,15 +105,13 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
         [HttpPut]
-        [Route("category/{categoryId}/items/{id}")]
+        [Route("category/items")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> UpdateCategoryItemAsync(int categoryId, int itemId, [FromBody] CategoryItemRequest request)
+        public async Task<ActionResult> UpdateCategoryItemAsync([FromBody] CategoryItemRequest request)
         {
-            if (!ModelState.IsValid || categoryId == 0 || categoryId != request.CategoryId || itemId != request.Id)
-            {
+            if (!ModelState.IsValid)
                 return BadRequest("Invalid request");
-            }
 
             var result = await _catalogService.UpdateCategoryItemAsync(request);
 
@@ -133,9 +127,7 @@ namespace OnlineStore.Catalog.API.Controllers
         public async Task<ActionResult> DeleteCategoryAsync(int id)
         {
             if (id == 0)
-            {
                 return BadRequest("Invalid request");
-            }
 
             var deleted = await _catalogService.DeleteCategoryAsync(id);
             if (!deleted)
@@ -146,15 +138,13 @@ namespace OnlineStore.Catalog.API.Controllers
 
 
         [HttpDelete]
-        [Route("category/{categoryId}/items/{id}")]
+        [Route("category/items/{id}")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> DeleteCategoryItemAsync(int categoryId, int id)
+        public async Task<ActionResult> DeleteCategoryItemAsync(int id)
         {
-            if (categoryId == 0 || id == 0)
-            {
+            if (id == 0)
                 return BadRequest("Invalid request");
-            }
 
             var deleted = await _catalogService.DeleteCategoryItemAsync(id);
             if (!deleted)

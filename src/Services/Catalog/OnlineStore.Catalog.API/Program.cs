@@ -1,32 +1,16 @@
-using OnlineStore.Catalog.API.Configurations;
-using OnlineStore.Catalog.Application.Infrastructure;
-using OnlineStore.Catalog.Application.Services;
-using OnlineStore.Catalog.Persistence.Repositories;
+using OnlineStore.Catalog.API.Configurations.Extensions;
+using OnlineStore.Catalog.API.Configurations.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddCatalogDbContext(builder.Configuration);
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-builder.Services
-    .AddScoped<ICategoryRepository, CategoryRepository>()
-    .AddScoped<ICategoryItemRepository, CategoryItemRepository>()
-    .AddScoped<ICatalogService, CatalogService>();
+builder.RegisterServices(typeof(Program));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI(options => MiddlewareConfigurationActions.ConfigureSwaggerMiddleware(app, options));
 
 app.UseHttpsRedirection();
 

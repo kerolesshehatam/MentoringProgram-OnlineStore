@@ -6,8 +6,10 @@ using System.Net;
 
 namespace OnlineStore.CartingService.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [Route("/api/v{version:apiVersion}/cart")]
     [ApiController]
-    [Route("[controller]")]
     public partial class CartController : ControllerBase
     {
         private readonly ICartService _cartService;
@@ -17,8 +19,9 @@ namespace OnlineStore.CartingService.Controllers
             _cartService = cartService;
             _logger = logger;
         }
-        [HttpGet]
-        [Route("v1/cart/{id}")]
+
+        [MapToApiVersion("1.0")]
+        [HttpGet, Route("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(CartResponse), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<CartResponse>> GetCartById(string id)
@@ -34,8 +37,8 @@ namespace OnlineStore.CartingService.Controllers
             return Ok(cart);
         }
 
-        [HttpGet]
-        [Route("v2/cart/{id}")]
+        [MapToApiVersion("2.0")]
+        [HttpGet, Route("{id}")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(IEnumerable<CartItemResponse>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<CartItemResponse>> GetCartByIdV2(string id)
@@ -50,13 +53,13 @@ namespace OnlineStore.CartingService.Controllers
             return Ok(cart);
         }
 
-        [HttpPost]
-        [Route("v1/cart/{id}/items")]
+        [MapToApiVersion("1.0")]
+        [HttpPost, Route("items")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult> AddCartItemAsync(string cartId, [FromBody] CartItemRequest request)
+        public async Task<ActionResult> AddCartItemAsync([FromBody] CartItemRequest request)
         {
-            if (!ModelState.IsValid || cartId is null || cartId != request.CartId)
+            if (!ModelState.IsValid)
                 return BadRequest("Invalid request");
 
             var result = await _cartService.AddCartItemAsync(request);
@@ -64,8 +67,8 @@ namespace OnlineStore.CartingService.Controllers
             return Ok(result);
         }
 
-        [HttpDelete]
-        [Route("v1/cart/{cartId}/Items/{itemId}")]
+        [MapToApiVersion("1.0")]
+        [HttpDelete, Route("{cartId}/items/{itemId}")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult> DeleteCartItemAsync(string cartId, int itemId)
