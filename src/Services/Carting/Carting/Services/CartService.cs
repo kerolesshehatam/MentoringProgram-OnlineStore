@@ -15,7 +15,10 @@ namespace OnlineStore.CartingService.Services
             _cartRepository = cartRepository;
             _mapper = mapper;
         }
-
+        public IEnumerable<string> GetCartsIds()
+        {
+            return _cartRepository.GetCartsIds();
+        }
         public async Task<CartResponse> GetCartAsync(string cartId)
         {
             var result = await _cartRepository.GetCartAsync(cartId);
@@ -28,6 +31,22 @@ namespace OnlineStore.CartingService.Services
             var result = await _cartRepository.GetCartItemsAsync(cartId);
 
             return _mapper.Map<IEnumerable<CartItemResponse>>(result);
+        }
+        public async Task UpdateCartItems(string cartId, int itemId, decimal newPrice, string newName)
+        {
+            var cart = await _cartRepository.GetCartAsync(cartId);
+
+            var itemsToUpdate = cart?.Items?.Where(x => x.Id == itemId).ToList();
+
+            if (itemsToUpdate != null)
+            {
+                foreach (var item in itemsToUpdate)
+                {
+                    item.Name = newName;
+                    item.Price = newPrice;
+                }
+                await _cartRepository.UpdateCartAsync(cart);
+            }
         }
         public async Task<CartItemResponse> AddCartItemAsync(CartItemRequest request)
         {
@@ -43,5 +62,6 @@ namespace OnlineStore.CartingService.Services
         {
             return await _cartRepository.RemoveCartItemAsync(cartId, itemId);
         }
+
     }
 }

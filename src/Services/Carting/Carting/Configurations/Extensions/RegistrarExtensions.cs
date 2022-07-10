@@ -16,5 +16,6 @@ namespace OnlineStore.CartingService.Configurations.Extensions
                 registrar.RegisterServices(builder);
             }
         }
+
     }
 }

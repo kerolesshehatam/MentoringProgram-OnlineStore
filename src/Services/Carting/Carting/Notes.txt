@@ -1,0 +1,12 @@
+﻿https://redis.io/docs/getting-started/installation/install-redis-on-windows/
+
+kero
+kero
+
+sudo apt-get update
+sudo apt-get install redis
+sudo service redis-server start
+
+redis-cli 
+127.0.0.1:6379> ping
+PONG

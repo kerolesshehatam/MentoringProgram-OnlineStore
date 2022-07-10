@@ -13,6 +13,7 @@ namespace OnlineStore.Catalog.API.Configurations.Registrars
                 .AddDbContext<CatalogContext>(options =>
                 {
                     options.UseSqlServer(connectionString);
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 });
 
         }

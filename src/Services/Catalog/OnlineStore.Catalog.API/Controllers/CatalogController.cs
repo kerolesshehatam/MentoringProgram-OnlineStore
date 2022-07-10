@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using OnlineStore.Catalog.API.IntegrationEvents;
+using OnlineStore.Catalog.API.IntegrationEvents.Events;
 using OnlineStore.Catalog.Application.Models.Requests;
 using OnlineStore.Catalog.Application.Models.Responses;
 using OnlineStore.Catalog.Application.Services;
@@ -12,11 +14,13 @@ namespace OnlineStore.Catalog.API.Controllers
     {
 
         private readonly ICatalogService _catalogService;
+        private readonly ICatalogIntegrationEventService _catalogIntegrationEventService;
         private readonly ILogger<CatalogController> _logger;
-        public CatalogController(ILogger<CatalogController> logger, ICatalogService catalogService)
+        public CatalogController(ILogger<CatalogController> logger, ICatalogService catalogService, ICatalogIntegrationEventService catalogIntegrationEventService)
         {
             _logger = logger;
             _catalogService = catalogService;
+            _catalogIntegrationEventService = catalogIntegrationEventService;
         }
 
 
@@ -113,7 +117,23 @@ namespace OnlineStore.Catalog.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Invalid request");
 
+            var currentItem = await _catalogService.GetCategoryItemAsync(request.Id);
+
             var result = await _catalogService.UpdateCategoryItemAsync(request);
+
+            var raiseItemChangedEvent = currentItem.Price != request.Price || currentItem.Name != request.Name;
+            if (raiseItemChangedEvent)
+            {
+                //Create Integration Event to be published through the Event Bus
+                var productChangedEvent = new CatalogItemChangedIntegrationEvent(request.Id,
+                                                                             newPrice: request.Price,
+                                                                             oldPrice: currentItem.Price,
+                                                                             newName: request.Name,
+                                                                             oldName: currentItem.Name);
+
+                // Publish through the Event Bus and mark the saved event as published
+                _catalogIntegrationEventService.PublishThroughEventBusAsync(productChangedEvent);
+            }
 
             return Ok(result);
         }

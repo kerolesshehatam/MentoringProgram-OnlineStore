@@ -10,6 +10,7 @@ namespace OnlineStore.CartingService.Models
         public CartProfile()
         {
             CreateMap<Cart, CartResponse>()
+                .ForMember(dest => dest.CartKey, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Items, opt => opt.MapFrom(src => src.Items))
                 .ReverseMap();
 

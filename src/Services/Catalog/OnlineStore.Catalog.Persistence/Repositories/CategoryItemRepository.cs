@@ -21,7 +21,7 @@ namespace OnlineStore.Catalog.Persistence.Repositories
         public async Task<IEnumerable<CategoryItem>> GetCategoryItemsAsync(int categoryId, int pageIndex = 1, int pageSize = 10)
         {
             return await _dbContext.CategoryItems.Where(t => t.CategoryId == categoryId)
-                                                 .Skip(pageSize * pageIndex)
+                                                 .Skip(pageSize * (pageIndex - 1))
                                                  .Take(pageSize)
                                                  .Include(t => t.Category)
                                                  .ToListAsync();

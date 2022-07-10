@@ -7,16 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\OnlineStore.EventBus.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\..\CommonLibraries\EventBus\OnlineStore.EventBus\OnlineStore.EventBus.csproj" />
     <ProjectReference Include="..\OnlineStore.Catalog.Persistence\OnlineStore.Catalog.Persistence.csproj" />
   </ItemGroup>
 
