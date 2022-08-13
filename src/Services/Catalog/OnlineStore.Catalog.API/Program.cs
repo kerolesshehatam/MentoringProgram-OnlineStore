@@ -10,13 +10,24 @@ builder.RegisterServices(typeof(Program));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI(options => MiddlewareConfigurationActions.ConfigureSwaggerMiddleware(app, options));
-
 app.UseHttpsRedirection();
 
+app.UseCors("CorsPolicy");
+
+app.UseAuthentication();
 app.UseAuthorization();
+
+// Configure the HTTP request pipeline.
+app.UseSwagger()
+   .UseSwaggerUI(options =>
+    {
+        MiddlewareConfigurationActions.ConfigureSwaggerMiddleware(app, options);
+        options.OAuthClientId("catalogserviceswaggerui");
+        options.OAuthAppName("CatalogService Swagger UI");
+        options.OAuthUsePkce();
+    });
+
+app.UseCors("DefaultCorsPolicy");
 
 app.MapControllers();
 

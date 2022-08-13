@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OnlineStore.Catalog.API.Configurations;
 using OnlineStore.Catalog.API.IntegrationEvents;
 using OnlineStore.Catalog.API.IntegrationEvents.Events;
 using OnlineStore.Catalog.Application.Models.Requests;
@@ -10,6 +12,7 @@ namespace OnlineStore.Catalog.API.Controllers
 {
     [ApiController]
     [Route("catalog")]
+    [Authorize]
     public class CatalogController : ControllerBase
     {
 
@@ -23,13 +26,25 @@ namespace OnlineStore.Catalog.API.Controllers
             _catalogIntegrationEventService = catalogIntegrationEventService;
         }
 
+        //Testing
+        //[Authorize(Roles = "Buyer")]
+        //[HttpGet]
+        //public async Task<IActionResult> Get2()
+        //{
+        //    var accessToken2 = Request.Headers["Authorization"];
 
+        //    var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+        //    return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+        //}
 
         [HttpGet]
         [Route("categories")]
         [ProducesResponseType(typeof(IEnumerable<CategoryResponse>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<CategoryResponse>>> GetCategories()
         {
+
+
             var categories = await _catalogService.GetCategoriesAsync();
             return Ok(categories);
         }
@@ -64,6 +79,7 @@ namespace OnlineStore.Catalog.API.Controllers
             return Ok(items);
         }
 
+        [Authorize(Roles = Roles.Manager)]
         [HttpPost]
         [Route("category")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -80,6 +96,7 @@ namespace OnlineStore.Catalog.API.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = Roles.Manager)]
         [HttpPost]
         [Route("category/items")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -94,6 +111,7 @@ namespace OnlineStore.Catalog.API.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = Roles.Manager)]
         [HttpPut]
         [Route("category")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -108,6 +126,7 @@ namespace OnlineStore.Catalog.API.Controllers
             return Ok(result);
         }
 
+        [Authorize(Roles = Roles.Manager)]
         [HttpPut]
         [Route("category/items")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -139,7 +158,7 @@ namespace OnlineStore.Catalog.API.Controllers
         }
 
 
-
+        [Authorize(Roles = Roles.Manager)]
         [HttpDelete]
         [Route("category")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
@@ -156,7 +175,7 @@ namespace OnlineStore.Catalog.API.Controllers
             return Ok(true);
         }
 
-
+        [Authorize(Roles = Roles.Manager)]
         [HttpDelete]
         [Route("category/items/{id}")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]

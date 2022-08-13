@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
-using OnlineStore.Catalog.API.Configurations.Registrars;
+using Microsoft.OpenApi.Models;
 using OnlineStore.Catalog.API.Configurations.Swagger;
 
-namespace OnlineStore.CartingService.Configurations.Registrars
+namespace OnlineStore.Catalog.API.Configurations.Registrars
 {
     public class SwaggerRegistrar : IRegistrar
     {
@@ -23,7 +23,29 @@ namespace OnlineStore.CartingService.Configurations.Registrars
                 setup.SubstituteApiVersionInUrl = true;
             });
 
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new OpenApiOAuthFlows()
+                    {
+                        AuthorizationCode = new OpenApiOAuthFlow()
+                        {
+                            AuthorizationUrl = new Uri($"{builder.Configuration.GetValue<string>("IdentityUrlExternal")}/connect/authorize"),
+                            TokenUrl = new Uri($"{builder.Configuration.GetValue<string>("IdentityUrlExternal")}/connect/token"),
+                            Scopes = new Dictionary<string, string>()
+                        {
+                            { "catalogApi","Catalog Api" },
+                        }
+                        }
+                    }
+                });
+
+                options.OperationFilter<AuthorizeCheckOperationFilter>();
+            });
+
             builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
         }
     }
