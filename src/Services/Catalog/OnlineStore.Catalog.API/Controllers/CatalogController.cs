@@ -26,20 +26,10 @@ namespace OnlineStore.Catalog.API.Controllers
             _catalogIntegrationEventService = catalogIntegrationEventService;
         }
 
-        //Testing
-        //[Authorize(Roles = "Buyer")]
-        //[HttpGet]
-        //public async Task<IActionResult> Get2()
-        //{
-        //    var accessToken2 = Request.Headers["Authorization"];
-
-        //    var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-        //    return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
-        //}
 
         [HttpGet]
-        [Route("categories")]
+        [AllowAnonymous]
+        [Route("{id}")]
         [ProducesResponseType(typeof(IEnumerable<CategoryResponse>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<CategoryResponse>>> GetCategories()
         {
@@ -62,6 +52,18 @@ namespace OnlineStore.Catalog.API.Controllers
                 return NotFound();
             }
             return Ok(category);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("category/item/details/{id}")]
+        public ActionResult<Dictionary<string, string>> GetItemProperties(int id)
+        {
+            var itemProperties = new Dictionary<string, string>();
+            itemProperties.Add("brand", "Samsung");
+            itemProperties.Add("model ", "s10");
+
+            return Ok(itemProperties);
         }
 
         [HttpGet]

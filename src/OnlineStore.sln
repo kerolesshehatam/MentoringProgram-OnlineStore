@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{81
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.AuthServer", "Services\Identity\OnlineStore.AuthServer\OnlineStore.AuthServer.csproj", "{38126BE9-9F2B-47DB-A561-CB7DF1A382D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.HttpAggregator", "ApiGateways\OnlineStore.HttpAggregator\OnlineStore.HttpAggregator.csproj", "{BCD8E431-459D-41AC-8517-6CE45EAB612C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{38126BE9-9F2B-47DB-A561-CB7DF1A382D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38126BE9-9F2B-47DB-A561-CB7DF1A382D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38126BE9-9F2B-47DB-A561-CB7DF1A382D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD8E431-459D-41AC-8517-6CE45EAB612C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD8E431-459D-41AC-8517-6CE45EAB612C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD8E431-459D-41AC-8517-6CE45EAB612C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD8E431-459D-41AC-8517-6CE45EAB612C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{F3AD1D27-C231-48A5-98D5-6A9983BF1007} = {A73DCA38-392B-427F-B1E4-FBF9FEA95F24}
 		{81901867-9CA5-4762-98C3-30A2E95139B3} = {DEEA1B37-F573-4957-90AD-49674C1B1CA2}
 		{38126BE9-9F2B-47DB-A561-CB7DF1A382D0} = {81901867-9CA5-4762-98C3-30A2E95139B3}
+		{BCD8E431-459D-41AC-8517-6CE45EAB612C} = {4375C5FE-957E-49AF-B64D-99919283440C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7385BC45-CD0C-4D6E-819B-C901DCA34A3C}

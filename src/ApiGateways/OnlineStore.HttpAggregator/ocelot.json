@@ -1,0 +1,43 @@
+{
+  "Routes": [
+    //catalogApi
+    {
+      "DownstreamPathTemplate": "/catalog/category/item/details/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/catalog/item/details/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "catalog"
+    },
+    //catalogApi
+    {
+      "DownstreamPathTemplate": "/api/v1/gcart/item/details/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/cart/item/details/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "cart"
+    }
+
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "catalog",
+        "cart"
+      ],
+      "UpstreamPathTemplate": "/gateway/catalogandcart/{id}",
+      //"Aggregator": "FakeDefinedAggregator"
+    }
+  ]
+}
