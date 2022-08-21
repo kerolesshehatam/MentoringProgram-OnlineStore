@@ -1,0 +1,9 @@
+﻿C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Infrastructure\ICategoryItemRepository.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Infrastructure\ICategoryRepository.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Models\CatalogProfile.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Models\Requests\CategoryItemRequest.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Models\Requests\CategoryRequest.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Models\Responses\Category.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Models\Responses\CategoryItemResponse.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Services\CatalogService.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Application\Services\ICatalogService.cs

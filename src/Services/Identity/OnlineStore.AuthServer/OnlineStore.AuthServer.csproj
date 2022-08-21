@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<CodeAnalysisRuleSet>..\..\..\.sonarlint\onlinestorecsharp.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -9,6 +10,10 @@
 	  <Content Remove="Pages2\**" />
 	  <EmbeddedResource Remove="Pages2\**" />
 	  <None Remove="Pages2\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AdditionalFiles Include="..\..\..\.sonarlint\onlinestore\CSharp\SonarLint.xml" Link="SonarLint.xml" />
 	</ItemGroup>
 
 	<ItemGroup>

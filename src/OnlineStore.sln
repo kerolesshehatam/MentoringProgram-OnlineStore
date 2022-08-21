@@ -39,7 +39,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{81
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.AuthServer", "Services\Identity\OnlineStore.AuthServer\OnlineStore.AuthServer.csproj", "{38126BE9-9F2B-47DB-A561-CB7DF1A382D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.HttpAggregator", "ApiGateways\OnlineStore.HttpAggregator\OnlineStore.HttpAggregator.csproj", "{BCD8E431-459D-41AC-8517-6CE45EAB612C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.HttpAggregator", "ApiGateways\OnlineStore.HttpAggregator\OnlineStore.HttpAggregator.csproj", "{BCD8E431-459D-41AC-8517-6CE45EAB612C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeStyle", "CodeStyle", "{53C7AD2B-FDD5-43B4-A422-3B0AC2FEC144}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{3745EF99-1BAD-480E-8F7E-2794E10EC16C}"
+	ProjectSection(SolutionItems) = preProject
+		setup-SonarQube.txt = setup-SonarQube.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

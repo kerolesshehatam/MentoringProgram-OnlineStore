@@ -1,0 +1,2 @@
+﻿C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Domain\Entities\Category.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Domain\Entities\CategoryItem.cs

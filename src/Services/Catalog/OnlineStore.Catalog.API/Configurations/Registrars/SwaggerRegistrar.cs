@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.OpenApi.Models;
+using OnlineStore.Catalog.API.Configurations.Middlewares;
 using OnlineStore.Catalog.API.Configurations.Swagger;
 
 namespace OnlineStore.Catalog.API.Configurations.Registrars

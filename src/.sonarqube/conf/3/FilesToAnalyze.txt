@@ -1,0 +1,5 @@
+﻿C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\DefaultRabbitMQPersistentConnection.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\EventBusRabbitMQ.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\GlobalUsings.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\IRabbitMQPersistentConnection.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\CommonLibraries\EventBus\OnlineStore.EventBus.RabbitMQ\Notes.txt

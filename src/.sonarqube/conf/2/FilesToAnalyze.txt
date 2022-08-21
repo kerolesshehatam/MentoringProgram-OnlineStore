@@ -1,0 +1,10 @@
+﻿C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\Controllers\CatalogController.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\Program.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\obj\Debug\net6.0\OnlineStore.HttpAggregator.GlobalUsings.g.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\obj\Debug\net6.0\OnlineStore.HttpAggregator.AssemblyInfo.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\obj\Debug\net6.0\OnlineStore.HttpAggregator.MvcApplicationPartsAssemblyInfo.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\appsettings.Development.json
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\appsettings.json
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\ocelot.json
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\ApiGateways\OnlineStore.HttpAggregator\Properties\launchSettings.json

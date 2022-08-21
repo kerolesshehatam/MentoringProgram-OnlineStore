@@ -1,0 +1,46 @@
+
+http://localhost:9000/dashboard?id=OnlineStore&selectedTutorial=local
+
+UserName: admin
+Password: admin123
+
+
+Installing a local instance of SonarQube (https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
+-------------------------
+From the Docker image use https://hub.docker.com/_/sonarqube/
+
+Start the server by running:
+ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+
+
+ Analyzing a Project
+Now that you're logged in to your local SonarQube instance, let's analyze a project:
+
+Click the Create new project button.
+Give your project a Project key and a Display name and click the Set Up button.
+Under Provide a token, select Generate a token. Give your token a name, click the Generate button, and click Continue.
+Select your project's main language under Run analysis on your project, and follow the instructions to analyze your project. Here you'll download and execute a Scanner on your code (if you're using Maven or Gradle, the Scanner is automatically downloaded).
+After successfully analyzing your code, you'll see your first analysis on SonarQube:
+
+
+setup the project steps:
+-------------------
+Scanner .NET Core Global Tool
+As a prerequisite you need to have the sonarscanner tool installed globally using the following command:
+
+1- dotnet tool install --global dotnet-sonarscanner
+Make sure dotnet tools folder is in your path. See dotnet global tools documentation for more information.
+Execute the Scanner
+Running a SonarQube analysis is straighforward. You just need to execute the following commands at the root of your solution.
+
+2- dotnet sonarscanner begin /k:"OnlineStore" /d:sonar.host.url="http://localhost:9000"  /d:sonar.login="sqp_49b94045144271fe608b33597a6afce5c9c638e1"
+3- dotnet build
+dotnet sonarscanner end /d:sonar.login="sqp_49b94045144271fe608b33597a6afce5c9c638e1"
+
+
+JAVA_Home Problems:
+
+https://github.com/SonarSource/sonar-scanner-msbuild/issues/749
+
+I downloaded OPEN JDK 12, setup Java_home environment variable and error got resolved
+https://download.java.net/openjdk/jdk12/ri/openjdk-12+32_windows-x64_bin.zip

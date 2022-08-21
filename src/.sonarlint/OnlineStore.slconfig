@@ -1,0 +1,20 @@
+{
+  "ServerUri": "http://localhost:9000/",
+  "Organization": null,
+  "ProjectKey": "OnlineStore",
+  "ProjectName": "OnlineStore",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AYLAzFRtIXbKJWZLQ6WC",
+      "ProfileTimestamp": "2022-08-21T14:26:32Z"
+    },
+    "Js": {
+      "ProfileKey": "AYLAzFLeIXbKJWZLQ6BC",
+      "ProfileTimestamp": "2022-08-21T14:26:32Z"
+    },
+    "Ts": {
+      "ProfileKey": "AYLAzFnoIXbKJWZLQ7QL",
+      "ProfileTimestamp": "2022-08-21T14:26:34Z"
+    }
+  }
+}

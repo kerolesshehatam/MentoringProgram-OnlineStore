@@ -1,0 +1,8 @@
+﻿C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\CatalogContext.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\EntityConfigurations\CategoryEntityConfiguration.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\EntityConfigurations\CategoryItemEntityConfiguration.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\Migrations\20220619081802_InitialCreate.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\Migrations\20220619081802_InitialCreate.Designer.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\Migrations\CatalogContextModelSnapshot.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\Repositories\CategoryItemRepository.cs
+C:\Keroles Shehata\EPAM\Projects\MentoringProgram-OnlineStore\src\Services\Catalog\OnlineStore.Catalog.Persistence\Repositories\CategoryRepository.cs
